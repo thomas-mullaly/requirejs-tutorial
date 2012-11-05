@@ -1,3 +1,11 @@
+require.config({
+    shim: {
+        'jquery': {
+            exports: '$'
+        }
+    }
+});
+
 require(['app'], function(app) {
     "use strict";
 
