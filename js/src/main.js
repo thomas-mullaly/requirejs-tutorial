@@ -10,8 +10,11 @@ require.config({
     },
     paths: {
         'jquery': '../lib/jquery-1.8.2',
-        'kendo': '../lib/kendo.web.min'
-    }
+        'kendo': '../lib/kendo.web.min',
+        'text': '../lib/requirejs-plugins/text',
+        'greetingTemplate': '../../html/greeting'
+    },
+    urlArgs: "bust=" + Date.now()
 });
 
 require(['app', 'kendo'], function(app, kendo) {
