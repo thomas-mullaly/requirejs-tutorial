@@ -1,11 +1,15 @@
-define([], function() {
+define(['jquery'], function($) {
     "use strict";
 
-    function Logger() {
+    function Logger(selector) {
+        this.ul = $(selector) || $("#log");
     };
 
     Logger.prototype.log = function() {
-        console.log(arguments);
+        var ul = this.ul;
+        $.each(arguments, function() {
+            $("<li />", { text: this }).fadeIn().appendTo(ul);
+        });
     };
 
     return Logger;
